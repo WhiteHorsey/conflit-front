@@ -2,10 +2,9 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "./App.scss";
 import { LoginPage, RegisterPage } from "./pages/auth";
-import { PublicLayout, Unauthorized, Missing } from "./pages/global";
+import { PublicLayout, Unauthorized, PageNotFound } from "./pages/global";
 import RequireAuth from "./features/auth/RequireAuth";
 import Test from "./pages/test/Test";
-import AuthVerify from "./common/AuthVerify";
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "./features/auth/authSlice";
@@ -43,7 +42,7 @@ const App = () => {
 					</Route>
 
 					{/* catch all */}
-					<Route path="*" element={<Missing />} />
+					<Route path="*" element={<PageNotFound />} />
 				</Route>
 			</Routes>
 			<ToastContainer

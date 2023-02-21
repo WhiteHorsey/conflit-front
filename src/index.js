@@ -16,18 +16,22 @@ import "react-toastify/dist/ReactToastify.css";
 // ROUTING
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import { AnimatePresence } from "framer-motion";
+
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
 	<React.StrictMode>
-		<Provider store={store}>
-			<BrowserRouter>
-				<Routes>
-					<Route path="/*" element={<App />} />
-				</Routes>
-			</BrowserRouter>
-		</Provider>
+		{/* <AnimatePresence initial={false} mode="wait"> */}
+			<Provider store={store}>
+				<BrowserRouter>
+					<Routes>
+						<Route path="/*" element={<App />} />
+					</Routes>
+				</BrowserRouter>
+			</Provider>
+		{/* </AnimatePresence> */}
 	</React.StrictMode>
 );
 

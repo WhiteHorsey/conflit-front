@@ -16,7 +16,7 @@ class AuthService {
 	}
 
 	login(request) {
-		return axios.post(SIGNIN_ROUTE, request);
+		return axios.post(SIGNIN_ROUTE, request, { withCredentials: true });
 	}
 
 	logout(userId) {
@@ -24,7 +24,7 @@ class AuthService {
 	}
 
 	refresh() {
-		return axios.post(REFRESH_ROUTE);
+		return axios.post(REFRESH_ROUTE, null, { withCredentials: true });
 	}
 }
 
